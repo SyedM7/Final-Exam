@@ -11,12 +11,12 @@ export const createTask = async (values: z.infer<typeof taskSchema>) => {
     return { err: "Invalid values" };
   }
 
-  const lorem = await prisma.task.create({
+  const tasks = await prisma.task.create({
     data: {
       name: validatedValues.data?.name,
       
     },
   });
 
-  console.log(lorem);
+  console.log(tasks);
 };
